@@ -1,8 +1,8 @@
-# Weird0s &nbsp; [![bluebuild build badge](https://github.com/55515-code/weird0s/actions/workflows/build.yml/badge.svg)](https://github.com/55515-code/weird0s/actions/workflows/build.yml)
+# Weird0s (Pronounced: Weirdo's) &nbsp; [![bluebuild build badge](https://github.com/55515-code/weird0s/actions/workflows/build.yml/badge.svg)](https://github.com/55515-code/weird0s/actions/workflows/build.yml)
 
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
 
-After setup, it is recommended you update this README to describe your custom image.
+Weird0s is intended to provide a universal blue desktop based on the latest COSMIC Alpha2 desktop and additional things. more to come
 
 ## Installation
 
