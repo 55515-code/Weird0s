@@ -22,13 +22,13 @@ modules:
 
     install:
         - cosmic-app-library
-        - cosmic-applets	1.0.0~alpha.2^git20240924.3670f12-1	2 days ago	 succeeded	Disabled	-
+        - cosmic-applets
         - cosmic-bg
         - cosmic-comp
-        - cosmic-desktop	1.0.0~alpha.2-1	2 days ago	 succeeded	Discosmic-compabled	-
-        - cosmic-edit	1.0.0~alpha.2^git20240926.a397278-1	2 days ago	 succeeded	Disabled	-
-        - cosmic-epoch	1.0.0~alpha.2-1	2 days ago	 succeeded	Disabled	-
-        - cosmic-files	1.0.0~alpha.2^git20240926.8dd26b6-1	2 days ago	 succeeded	Disabled	-
+        - cosmic-desktop
+        - cosmic-edit
+        - cosmic-epoch
+        - cosmic-files
         - cosmic-desktop
         - cosmic-edit
         - cosmic-epoch
