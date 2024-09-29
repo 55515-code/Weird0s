@@ -4,7 +4,7 @@ name: Weird0s
 description: This is my personal OS image.
 
 # the base image to build on top of (FROM) and the version tag to use
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/wayblueorg/river
 image-version: 40 # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
@@ -17,8 +17,38 @@ modules:
 
   - type: rpm-ostree
     repos:
-      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+       - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
+       - https://copr.fedorainfracloud.org/coprs/ryanabx/cosmic-epoch/repo/fedora-40/ryanabx-cosmic-epoch-fedora-40.repo
+
     install:
+        - cosmic-app-library
+        - cosmic-applets	1.0.0~alpha.2^git20240924.3670f12-1	2 days ago	 succeeded	Disabled	-
+        - cosmic-bg
+        - cosmic-comp
+        - cosmic-desktop	1.0.0~alpha.2-1	2 days ago	 succeeded	Discosmic-compabled	-
+        - cosmic-edit	1.0.0~alpha.2^git20240926.a397278-1	2 days ago	 succeeded	Disabled	-
+        - cosmic-epoch	1.0.0~alpha.2-1	2 days ago	 succeeded	Disabled	-
+        - cosmic-files	1.0.0~alpha.2^git20240926.8dd26b6-1	2 days ago	 succeeded	Disabled	-
+        - cosmic-desktop
+        - cosmic-edit
+        - cosmic-epoch
+        - cosmic-files
+        - cosmic-greeter
+        - cosmic-icon-theme
+        - cosmic-launcher
+        - cosmic-notifications
+        - cosmic-osd
+        - cosmic-panel
+        - cosmic-randr
+        - cosmic-screenshot
+        - cosmic-session
+        - cosmic-settings
+        - cosmic-settings-daemon
+        - cosmic-store
+        - cosmic-term
+        - cosmic-workspaces
+        - pop-launcher
+        - xdg-desktop-portal-cosmic
       # - micro
       # - starship
     remove:
@@ -31,11 +61,12 @@ modules:
     notify: true # Send notification after install/uninstall is finished (true/false)
     system:
       # If no repo information is specified, Flathub will be used by default
-      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      # repo-name: flathub
-      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
+      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
+      repo-name: flathub
+      repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
-        # - org.mozilla.firefox
+         - org.mozilla.firefox
+         - io.github.dvlv.boxbuddyrs
         # - org.gnome.Loupe
         # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
       # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
