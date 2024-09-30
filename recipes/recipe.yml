@@ -1,19 +1,25 @@
 # image will be published to ghcr.io/<user>/<name>
 name: Weird0s
 # description will be included in the image's metadata
-description: This is my personal OS image.
+description: Weird0s.
 
 # the base image to build on top of (FROM) and the version tag to use
 base-image: ghcr.io/wayblueorg/river
-image-version: 40 # latest is also supported if you want new updates ASAP
+image-version: latest # latest is also supported if you want new updates ASAP
 
 # module configuration, executed in order
 # you can include multiple instances of the same module
 modules:
   - type: files
-    files:
-      - source: system
-        destination: / # copies files/system/* (* means everything inside it) into your image's root folder /
+files:
+  - source: system/usr
+    destination: /usr
+  - source: system/etc
+    destination: /etc
+- type: systemd
+system:
+  enabled:
+    - sddm-boot.service
 
   - type: rpm-ostree
     repos:
@@ -49,6 +55,13 @@ modules:
         - cosmic-workspaces
         - pop-launcher
         - xdg-desktop-portal-cosmic
+        - sddm
+        - sddm-themes
+        - qt5-qtgraphicaleffects
+        - qt5-qtquickcontrols2
+        - qt5-qtsvg
+        - kwallet
+        - pam-kwallet
       # - micro
       # - starship
     remove:
@@ -76,4 +89,5 @@ modules:
       # - org.gnome.eog
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
+  
 
